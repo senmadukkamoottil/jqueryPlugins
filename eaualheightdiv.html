@@ -105,10 +105,10 @@
     </script>
     <script>
         $(document).ready(function () {
-            $.fn.makeEqualHeight = ((function(){
+            $.fn.makeEqualHeight = (function(){
                 var maxHeight = 0;
             var currentHeight = 0;
-            var stories = $(this).find(".story");
+            var stories = $(this);
             stories.each(function (i, item) {
                 currentHeight = $(item).outerHeight(true);
                 if (currentHeight > maxHeight) {
@@ -120,10 +120,10 @@
             //return is used to return the object so that it can be chained 
             //with other functionalities
             return stories;
-            }));
+            });
 
-            $("#stories-1").makeEqualHeight();
-            $("#stories-2").makeEqualHeight();
+            $("#stories-1").find(".story").makeEqualHeight();
+            $("#stories-2").find(".story").makeEqualHeight();
         });
     </script>
 </body>
