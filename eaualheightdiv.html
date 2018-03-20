@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/standardize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Equal htight divs</title>
+</head>
+
+<body>
+    <section class="main clearfix">
+        <section class="subheader clearfix">
+            <p class="tagline">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                qui eveniet.
+            </p>
+        </section>
+        <section class="stories clearfix" id="stories-1">
+            <div id="story-1" class="story story-1">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.accumsan et iusto odio dignissim qui. Eum iriure dolor in hendrerit in vulputate velit esse.
+                    Etiam processus dynamicus qui sequitur mutationem consuetudium lectorum mirum est. Claritatem Investigationes
+                    demonstraverunt lectores legere me lius, quod ii legunt.
+                </p>
+            </div>
+            <div id="story-2" class="story story-2">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+            </div>
+            <div id="story-3" class="story story-3">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+            </div>
+        </section>
+        <section class="stories clearfix" id="stories-2">
+            <div id="story-4" class="story story-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+            </div>
+            <div id="story-5" class="story story-5">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+            </div>
+            <div id="story-6" class="story story-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, magni, rem molestias vel placeat blanditiis consequuntur
+                    quis voluptates et porro dignissimos aperiam reiciendis? Inventore voluptatum illum provident consequatur
+                    qui eveniet.erunt lectores legere me lius, quod ii legunt. Claritatem insitam est usus legentis in iis
+                    qui facit eorum claritatem.
+                </p>
+            </div>
+        </section>
+    </section>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>
+        window.jQuery || document.write("<script type='text/javascript' src='js/jquery-3.3.1.js'><\/script>");
+    </script>
+    <script>
+        $(document).ready(function () {
+            var maxHeight = 0;
+            var currentHeight = 0;
+            var stories = $("#stories-1").find(".story");
+            stories.each(function (i, item) {
+                currentHeight = $(item).outerHeight(true);
+                if (currentHeight > maxHeight) {
+                    maxHeight = currentHeight;
+                }
+            });
+            stories.css("height", maxHeight);
+        });
+    </script>
+</body>
+
+</html>
