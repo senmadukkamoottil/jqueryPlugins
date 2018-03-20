@@ -105,22 +105,25 @@
     </script>
     <script>
         $(document).ready(function () {
-            $.fn.makeEqualHeight = (function(){
-                var maxHeight = 0;
-            var currentHeight = 0;
-            var stories = $(this);
-            stories.each(function (i, item) {
-                currentHeight = $(item).outerHeight(true);
-                if (currentHeight > maxHeight) {
-                    maxHeight = currentHeight;
-                }
-            });
-            stories.css("height", maxHeight);
-            
-            //return is used to return the object so that it can be chained 
-            //with other functionalities
-            return stories;
-            });
+
+            (function ($) {
+                $.fn.makeEqualHeight = (function () {
+                    var maxHeight = 0;
+                    var currentHeight = 0;
+                    var stories = $(this);
+                    stories.each(function (i, item) {
+                        currentHeight = $(item).outerHeight(true);
+                        if (currentHeight > maxHeight) {
+                            maxHeight = currentHeight;
+                        }
+                    });
+                    stories.css("height", maxHeight);
+
+                    //return is used to return the object so that it can be chained 
+                    //with other functionalities
+                    return stories;
+                });
+            }(jQuery))
 
             $("#stories-1").find(".story").makeEqualHeight();
             $("#stories-2").find(".story").makeEqualHeight();
