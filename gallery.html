@@ -84,18 +84,24 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.js"><\/script>')</script>
     <script>
-            $(document).ready(function () {
-                'use strict';
-                var imageTags = $(".post").find("img");
-                var imgTitle = "";
-                imageTags.each(function(i, item){
-                    if(!$(item).parent().hasClass("captioned-image")){
-                        imgTitle = $(item).attr("title");
-                        $(item).wrap("<div class='captioned-image'>").after("<span class='caption'>"+imgTitle+"</span>");
-                    }
-                });
-            });
-        </script>
+        $(document).ready(function () {
+            (function () {
+                $.fn.updateImageTags = function () {
+                    'use strict';
+                    var imageTags = $(this).find("img");
+                    var imgTitle = "";
+                    imageTags.each(function (i, item) {
+                        if (!$(item).parent().hasClass("captioned-image")) {
+                            imgTitle = $(item).attr("title");
+                            $(item).wrap("<div class='captioned-image'>").after("<span class='caption'>" + imgTitle + "</span>");
+                        }
+                    });
+                    return this;
+                }
+            }());
+           $(".post").updateImageTags();
+        });
+    </script>
 </body>
 
-</html> 
+</html>
