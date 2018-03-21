@@ -83,40 +83,10 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-3.3.1.js"><\/script>')</script>
+    <script src="js/updateImageTags.js"></script>
     <script>
         $(document).ready(function () {
-            (function () {
-                /*
-                "wrapperTag"    : The tag that wrappes the image tags
-                "wrapperClass"  : Class name of wrapper tag
-                "captionTag"    : The tag that shows caption
-                "captionClass"  : The class name of the caption tag
-                
-                */
-                var defaultOptions = {
-                    "wrapperTag"    : "span",
-                    "wrapperClass"  : "captioned-image",
-                    "captionTag"    : "span",
-                    "captionClass"  : "caption"
-                };
-                
-                $.fn.updateImageTags = function (userOptions) {
-                    'use strict';
-
-                   var options = $.extend(defaultOptions, userOptions);
-                    
-                    var imageTags = $(this).find("img");
-                    var imgTitle = "";
-                    imageTags.each(function (i, item) {
-                        if (!$(item).parent().hasClass(options.wrapperClass)) {
-                            imgTitle = $(item).attr("title");
-                            $(item).wrap("<"+options.wrapperTag+" class='"+options.wrapperClass+"'>").after("<"+options.wrapperTag+" class='"+options.captionClass+"'>" + imgTitle + "</"+options.wrapperTag+">");
-                        }
-                    });
-                    return this;
-                }
-            }());
-
+            
             var userOptions = {
                 "wrapperTag"    : "div",
                 "wrapperClass"  : "captioned-image",
